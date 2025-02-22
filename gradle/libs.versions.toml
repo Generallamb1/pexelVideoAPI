@@ -13,6 +13,12 @@ ktor = "3.1.0"
 coroutines = "1.10.1"
 kotlin-serialization = "1.6.0"
 coil = "3.1.0"
+hilt = "2.51.1"
+compose = "1.3.1"
+kapt = "2.1.10"
+hilt-navigation = "1.2.0"
+navigation = "2.8.6"
+room = "2.6.1"
 
 
 [libraries]
@@ -45,6 +51,16 @@ kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutine
 coil-kt = { group = "io.coil-kt.coil3", name = "coil-compose", version.ref = "coil"}
 coil-network = {module = "io.coil-kt.coil3:coil-network-okhttp" , version.ref = "coil"}
 
+dagger-hilt = {module = "com.google.dagger:hilt-android", version.ref = "hilt"}
+dagger-hilt-compiler = {module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt"}
+hilt-navigation = {module = "androidx.hilt:hilt-navigation-compose", version.ref = "hilt-navigation"}
+
+android-compose-material = {module = "androidx.compose.material3:material3", version.ref = "compose"}
+
+androidx-navigation = {module = "androidx.navigation:navigation-compose", version.ref = "navigation"}
+
+androidx-room = { group = "androidx.room", name = "room-runtime", version.ref = "room"}
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
@@ -52,3 +68,7 @@ jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = 
 org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin-serialization"}
+
+dagger-hilt = {id = "com.google.dagger.hilt.android", version.ref = "hilt"}
+
+kotlin-kapt = { id = 'org.jetbrains.kotlin.kapt', version.ref = "kapt"}

@@ -3,7 +3,7 @@ package com.example.vk_test_player.data.model
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class VideoFiles(
+data class VideoFilesResponse(
     val id: Int,
     val quality: String?,
     val file_type: String,

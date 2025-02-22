@@ -3,8 +3,8 @@ package com.example.vk_test_player.data.model
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class User(
+data class VideoPicturesResponce(
     val id: Int,
-    val name: String,
-    val url: String
+    val picture: String,
+    val nr: Int
 )

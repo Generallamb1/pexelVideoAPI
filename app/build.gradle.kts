@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.dagger.hilt)
 }
 
 android {
@@ -11,7 +13,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.vk_test_player"
-        minSdk = 34
+        minSdk = 26
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -49,6 +51,11 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
+    kapt {
+        correctErrorTypes = true
+    }
+
 }
 
 dependencies {
@@ -70,11 +77,22 @@ dependencies {
     implementation(libs.ktor.client.content.negotiation)
     implementation(libs.ktor.serialization)
 
+    kapt(libs.dagger.hilt.compiler)
+    implementation(libs.hilt.navigation)
+
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.coroutines.core)
 
     implementation(libs.coil.kt)
     implementation(libs.coil.network)
+
+    implementation(libs.dagger.hilt)
+
+    implementation(libs.android.compose.material)
+
+    implementation(libs.androidx.navigation)
+
+    implementation(libs.androidx.room)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
