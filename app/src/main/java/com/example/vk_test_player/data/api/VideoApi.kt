@@ -17,8 +17,8 @@ import javax.inject.Singleton
 class VideoApi @Inject constructor() {
 
     object Const {
-        // TODO вынести в local.properties или в gradle BuildVariables
         const val API_KEY = "b6tWIpBh4qIIQ1UHNkVPwXohkWgZQS8UGMJYZkq3N48nUPGfDjSDWoEj"
+        const val GET_VIDEO_PATH = "https://api.pexels.com/videos/search?query=nature&per_page=30"
     }
 
     private val client = HttpClient(OkHttp) {
@@ -33,7 +33,7 @@ class VideoApi @Inject constructor() {
 
     suspend fun getSomeVideos(): List<VideoResponse> {
         val response: JsonVideoResponse =
-            client.get("https://api.pexels.com/videos/search?query=nature&per_page=30") {
+            client.get(Const.GET_VIDEO_PATH) {
                 headers {
                     headers.append("Authorization", Const.API_KEY)
                 }

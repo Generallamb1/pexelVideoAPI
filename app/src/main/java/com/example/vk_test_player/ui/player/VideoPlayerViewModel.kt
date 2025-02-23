@@ -21,6 +21,10 @@ class VideoPlayerViewModel @Inject constructor(
         return player
     }
 
+    fun playerStop(){
+        player.stop()
+    }
+
     private fun playVideo() {
         player.apply {
             val mediaItem = MediaItem.fromUri(savedInstance.get<String>("url").orEmpty())

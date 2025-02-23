@@ -12,5 +12,5 @@ data class VideoResponse(
     val duration: Int,
     val user: UserResponse,
     val video_files: List<VideoFilesResponse>,
-    val video_pictures: List<VideoPicturesResponce>
+    val video_pictures: List<VideoPicturesResponse>
 )

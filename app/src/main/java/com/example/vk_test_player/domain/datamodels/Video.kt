@@ -5,7 +5,7 @@ data class Video(
     val width: Int,
     val height: Int,
     val image: String,
-    val duration: Int,
+    val duration: String,
     val videoName: String,
     val videoFiles: List<VideoFiles>,
 )

@@ -7,6 +7,7 @@ import com.example.vk_test_player.domain.datamodels.VideoFiles
 import com.example.vk_test_player.data.model.VideoResponse
 import javax.inject.Inject
 import javax.inject.Singleton
+import kotlin.time.Duration.Companion.minutes
 
 
 @Singleton
@@ -20,7 +21,7 @@ class VideoRepository @Inject constructor(
             width = videoResponse.width,
             height = videoResponse.height,
             image = videoResponse.image,
-            duration = videoResponse.duration,
+            duration = durationToTime(videoResponse.duration.toString()),
             videoName = videoResponse.url
                 .substringAfterLast("video/")
                 .replace(Regex("[^a-zA-Z]"), " ")
@@ -43,6 +44,12 @@ class VideoRepository @Inject constructor(
         return videoApi.getSomeVideos().map {
             mapVideo(it)
         }
+    }
+
+    fun durationToTime(duration: String): String{
+        val minutes = duration.toInt() / 60
+        val seconds = String.format("%02d", duration.toInt() % 60)
+        return "$minutes:$seconds"
     }
 
 }

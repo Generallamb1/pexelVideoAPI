@@ -24,6 +24,7 @@ fun VideoPlayerScreen(navController: NavController) {
             modifier = Modifier.statusBarsPadding(),
             onClick = {
                 navController.popBackStack()
+                viewModel.playerStop()
             }
         ) {
             Icon(imageVector = Icons.Filled.ArrowBack, contentDescription = "Стрелка назад")
