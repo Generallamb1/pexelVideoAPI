@@ -23,6 +23,7 @@ class VideoPlayerViewModel @Inject constructor(
 
     fun playerStop(){
         player.stop()
+        player.release()
     }
 
     private fun playVideo() {
