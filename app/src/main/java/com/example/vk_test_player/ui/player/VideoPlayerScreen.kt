@@ -37,6 +37,7 @@ fun VideoPlayerScreen(navController: NavController) {
             modifier = Modifier.statusBarsPadding(),
             onClick = {
                 viewModel.playerStop()
+                isPlayerVisible = false
                 navController.popBackStack()
             }
         ) {
@@ -51,3 +52,5 @@ fun VideoPlayerScreen(navController: NavController) {
             )
     }
 }
+
+
