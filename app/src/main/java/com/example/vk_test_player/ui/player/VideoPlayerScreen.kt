@@ -31,12 +31,11 @@ fun VideoPlayerScreen(navController: NavController) {
         navController.popBackStack()
     }
 
-
     Column() {
         IconButton(
             modifier = Modifier.statusBarsPadding(),
             onClick = {
-                viewModel.playerStop()
+                    viewModel.playerStop()
                 isPlayerVisible = false
                 navController.popBackStack()
             }

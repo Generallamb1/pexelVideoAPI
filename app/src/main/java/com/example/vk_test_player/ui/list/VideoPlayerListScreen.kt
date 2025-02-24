@@ -106,49 +106,6 @@ fun loader() {
     }
 }
 
-//@Composable
-//fun VideoCard(
-//    video: Video,
-//    navController: NavController
-//) {
-//    Card(
-//        modifier = Modifier
-//            .height(if (video.height > video.width) 400.dp else 150.dp)
-//            .clickable {
-//                navController.navigate(
-//                    VideoPlayerScreenRoute(
-//                        url = video.videoFiles.find { it.quality == "hd" }?.link.orEmpty()
-//                    )
-//                )
-//            }
-//
-//    ) {
-//        Column() {
-//            AsyncImage(
-//                model = video.image,
-//                contentDescription = "Изображение для видео",
-//                modifier = Modifier.height(if (video.height > video.width) 300.dp else 50.dp),
-//                contentScale = ContentScale.Crop
-//            )
-//            Column(modifier = Modifier.padding(horizontal = 10.dp)) {
-//                Text(
-//                    text = video.videoName,
-//                    fontSize = 20.sp,
-//                    textAlign = TextAlign.Left,
-//                    fontWeight = FontWeight.Black,
-//                    modifier = Modifier.padding(5.dp)
-//                )
-//                Text(
-//                    text = video.duration,
-//                    fontSize = 20.sp,
-//                    textAlign = TextAlign.Left,
-//                    modifier = Modifier.padding(5.dp)
-//                )
-//            }
-//        }
-//    }
-//}
-
 @Composable
 fun VideoCard(
     video: Video,
