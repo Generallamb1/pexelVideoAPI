@@ -145,7 +145,7 @@ fun VideoCard(
                         modifier = Modifier.padding(bottom = 4.dp)
                     )
                     Text(
-                        text = video.duration,
+                        text = video.duration.toString(),
                         fontSize = 14.sp
                     )
                 }
